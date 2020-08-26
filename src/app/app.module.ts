@@ -11,13 +11,15 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InstallBtnComponent } from './components/install-btn/install-btn.component';
+import { IsMobileDirective } from './_directives/is-mobile.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SquareComponent,
     BoardComponent,
-    InstallBtnComponent
+    InstallBtnComponent,
+    IsMobileDirective
   ],
   imports: [
     BrowserModule,

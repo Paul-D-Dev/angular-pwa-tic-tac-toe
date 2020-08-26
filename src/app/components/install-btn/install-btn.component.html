@@ -1,11 +1,15 @@
-<button
-    icon=""
+<ng-container *isMobile="true">
+  <nb-icon *ngIf="showButton" icon="plus-square-outline" status="primary" (click)="this.a2hs()"></nb-icon>
+</ng-container>
+
+<ng-container *isMobile="false">
+  <button
     nbButton
     outline
     *ngIf="showButton"
     status="primary"
     (click)="this.a2hs()">
-    <nb-icon icon="plus-square-outline" status="primary"></nb-icon>
+    <nb-icon icon="plus-outline" status="primary"></nb-icon>
     home screen
-</button>
-
+  </button>
+</ng-container>

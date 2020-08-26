@@ -1,15 +1,15 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-install-btn',
   templateUrl: './install-btn.component.html',
   styleUrls: ['./install-btn.component.scss']
 })
-export class InstallBtnComponent implements OnInit {
+export class InstallBtnComponent{
 
   constructor() { }
 
-  deferredPrompt;
+  deferredPrompt: { prompt: () => void; userChoice: Promise<any>; };
   showButton = false;
 
   @HostListener('window:beforeinstallprompt', ['$event'])
@@ -19,9 +19,6 @@ export class InstallBtnComponent implements OnInit {
     // Stash the event so it can be triggered later.
     this.deferredPrompt = e;
     this.showButton = true;
-  }
-
-  ngOnInit(): void {
   }
 
   // Methode Add To Home Screen
