@@ -10,6 +10,8 @@ export class BoardComponent implements OnInit {
   squares: any[];
   xIsNext: boolean;
   winner: string;
+  botTurn: boolean;
+  end: boolean;
 
   constructor() { }
 
@@ -21,6 +23,11 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = Math.random() >= 0.5;
+    this.botTurn = !this.xIsNext;
+    this.end = false;
+    if (this.botTurn) {
+      this.botMove(this.botTurn);
+    }
   }
 
   player(): string {
@@ -29,15 +36,44 @@ export class BoardComponent implements OnInit {
 
   makeMove(idx: number): void {
     if (!this.winner) {
-      if (!this.squares[idx]) {
-        this.squares.splice(idx, 1, this.player());
-        this.xIsNext = !this.xIsNext;
+      if (!this.squares[idx] && this.xIsNext) {
+        this.move(this.xIsNext, idx);
       }
-      this.winner = this.calculateWinner();
+      this.botMove(this.botTurn);
     }
   }
 
-  calculateWinner() {
+  move(bool: boolean, idx?: number) {
+    if (bool === this.xIsNext) {
+      this.squares.splice(idx, 1, this.player());
+    } else {
+
+      this.squares.splice(idx, 1, this.player());
+    }
+    this.winner = this.calculateWinner();
+    this.xIsNext = !this.xIsNext;
+  }
+
+
+  botMove(bool: boolean) {
+    const id = this.randomIndex();
+    this.move(bool, id);
+  }
+  randomIndex(): number {
+    const index = [];
+
+    for (let i = 0; i < this.squares.length; i++) {
+      if (this.squares[i] === null ) {
+        index.push(i);
+      }
+    }
+    const random = index[Math.floor(Math.random() * index.length)];
+    return random;
+  }
+
+
+
+  calculateWinner(): string {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
