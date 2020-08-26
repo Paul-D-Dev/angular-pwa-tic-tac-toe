@@ -1,13 +1,26 @@
+@import '../../../styles.scss';
+
 .value {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  font-size: 70px !important;
+  font-size: $font-size-game-m !important;
   border-radius: 0 !important;
   &:focus {
     box-shadow: none;
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .value {
+    font-size: $font-size-game-t !important;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .value {
+    font-size: $font-size-game-d !important
+  }
+}

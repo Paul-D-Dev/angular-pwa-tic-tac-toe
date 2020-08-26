@@ -1,3 +1,5 @@
+<div class="content">
+
 <h1>Current Player : {{ player() }}</h1>
 
 <button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
@@ -6,11 +8,15 @@
   Player {{winner}} won the game !
 </h2>
 
-<main>
-  <app-square
-      *ngFor="let square of squares;
-      let i = index"
-      [value]="square"
-      (click)="makeMove(i)">
-  </app-square>
-</main>
+<div class="content-play">
+  <main>
+      <app-square
+        *ngFor="let square of squares;
+        let i = index"
+        [value]="square"
+        (click)="makeMove(i)">
+      </app-square>
+  </main>
+</div>
+
+</div>

@@ -1,10 +1,42 @@
+@import '../../../styles.scss';
+
+
+.content-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 main {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: $square-m $square-m $square-m;
   grid-gap: 0;
+  margin-top: 20px;
 }
 
 app-square {
   border: 1px gray solid;
-  height: 200px;
+  height: $square-m
+}
+
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: $square-t $square-t $square-t;
+  }
+
+  app-square {
+    height: $square-t
+  }
+}
+
+
+@media only screen and (min-width: 1080px) {
+  main {
+    grid-template-columns: $square-d $square-d $square-d;
+  }
+
+  app-square {
+    height: $square-d
+  }
+
 }
