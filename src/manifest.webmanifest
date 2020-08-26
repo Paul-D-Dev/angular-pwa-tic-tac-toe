@@ -1,6 +1,6 @@
 {
-  "name": "tic-tac-toe-pwa",
-  "short_name": "tic-tac-toe-pwa",
+  "name": "tic-tac-toe",
+  "short_name": "tic-tac-toe",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
