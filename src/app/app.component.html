@@ -1,19 +1,27 @@
 <nb-layout>
 
   <nb-layout-header fixed>
-  <!-- Insert header here -->
+    <h1>Tic Tac Toe</h1>
   </nb-layout-header>
 
   <nb-layout-column>
 
     <app-board></app-board>
-    
-    <router-outlet></router-outlet>
-    
+
   </nb-layout-column>
 
   <nb-layout-footer fixed>
-  <!-- Insert footer here -->
+    <ul>
+      <li>
+        <a href="https://github.com/Paul-D-Dev/angular-pwa-tic-tac-toe" target="/blank">GitHub</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/pauldaodev/" target="/blank">Linkedin</a>
+      </li>
+    </ul>
   </nb-layout-footer>
 
 </nb-layout>
+
+
+<router-outlet></router-outlet>
