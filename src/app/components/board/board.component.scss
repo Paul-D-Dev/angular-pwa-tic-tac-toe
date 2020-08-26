@@ -8,6 +8,11 @@ $square-d: 200px;
   justify-content: center;
   align-items: center;
 }
+
+h1 {
+  font-size: 24px;
+}
+
 main {
   display: grid;
   grid-template-columns: $square-m $square-m $square-m;
