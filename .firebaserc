@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tic-tac-toe-angular-pwa-f6d63": {
+      "hosting": {
+        "tic-tac-toe-pwa": [
+          "tic-tac-toe-angular-pwa-f6d63"
+        ]
+      }
+    }
+  }
+}
